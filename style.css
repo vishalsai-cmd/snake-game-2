@@ -1,0 +1,160 @@
+Body{
+    background-color:white;
+    height:95vh;
+    width:95vw;
+    justify-content: center;
+    align-items:center;
+    display:flex;
+}
+#game{
+    /* box-shadow:0 15px 35px; */
+    box-shadow:0 55px 100px;
+    border-radius: 5rem;
+    width:50rem;
+    height:50rem;
+    display:grid;
+    grid-template-rows: repeat(40,1fr);
+    grid-template-columns: repeat(40,1fr);
+    /* border:0.5rem solid black;*/
+}
+.gridsize >a{
+    text-decoration:none;
+    color:white;
+    box-shadow:0 15px 35px rgb(4,19,4);
+    border: 0.1rem solid white;
+    padding:0.2rem;
+    border-radius: 0.3rem;
+}
+.gridsize{
+    margin-bottom: 1rem;
+}
+.button >a{
+    text-decoration:none;
+    color:white;
+    box-shadow:0 15px 35px , rgb(4, 19, 4);
+    border:0.1rem solid white;
+    padding:0.2rem;
+    border-radius: 0.3rem;
+}
+.snake{
+    background-color: white;
+    border:0.1vmin solid white;
+    border-radius: 0.3rem;
+}
+.food1{
+    background-color:yellow;
+    border:0.1vmin solid white;
+}
+.food2{
+    background-color:blue;
+    border:0.1vmin solid white;
+}
+.food3{
+    background-color:red;
+    border:0.1vmin solid white;
+}
+.obstacle{
+    background-color:white;
+    border-radius:0.6rem;
+}
+.flex-col{
+    display:flex;
+    flex-direction: column;
+}
+.power{
+    background-color:purple;
+    border-radius:0.3rem;
+}
+#obstacle{
+    background-color: red;
+}
+.nav-bar{
+    justify-content:space-between;
+    width:50rem;
+    color:white;
+    height:6vh;
+}
+.score{
+    font-size:2rem;
+    color:white;
+}
+.flex-row{
+    display:flex;
+    flex-direction:row;
+}
+.high-score{
+    justify-content:space-around;
+    font-size:2rem;
+    color:white
+}
+#countdown{
+    font-size:2rem;
+    margin-right:15vw;
+    color:white;
+}
+.up{
+    border-radius: 1.5rem;
+    height:4vh;
+}
+.down{
+    border-radius: 1.5rem;
+    height:4vh;
+
+}
+.right{
+    border-radius: 1.5rem;
+    height:4vh;
+}
+.left{
+    border-radius: 1.5rem;
+    height:4vh;
+}
+.top-nav{
+    width:50rem;
+    color:white;
+}
+.colors{
+    font-size:2rem;
+    color:white;
+}
+.up > img{
+    height:2vh;
+    width:2vw;
+}
+.down > img{
+    height:2vh;
+    width:2vw;
+}
+.right > img{
+    height:2vh;
+    width:2vw;
+}
+.left > img{
+    height:2vh;
+    width:2vh;
+}
+@media screen {
+    body{
+        background-color: white;
+    }
+} 
+.greenfood{
+    background-color:green ;
+}
+.gameover{
+    /* background-color:black; */
+    align-items:center;
+    width:40px;
+    height:40px;
+    color:white;
+    border-radius: 2rem;
+    box-shadow:10px 10px /* 5px */ ;
+}
+body{
+    overflow:hidden;
+    background-image: url("https://cdn.create.vista.com/api/media/small/225179234/stock-photo-asian-rainforest-jungle-august");
+    background-size:95vh 95vw;
+}
+.margin{
+    margin-bottom:30rem;
+}
