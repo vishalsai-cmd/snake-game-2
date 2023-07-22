@@ -26,7 +26,7 @@ let image1=document.getElementById("image1");
 let image2=document.getElementById("image2");
 let gameover2=document.getElementsByClassName("gameover");
 /* let power=document.getElementsByClassName("power"); */
-
+var Audio=new Audio("foodsound.wav");
 
 let score=0;
 let snakebody=[
@@ -273,6 +273,7 @@ const initgame = () =>{
         {
            console.log("sai");
            j++;
+           Audio.play();
            if(j == snakebody.length)
            {
             image.style.visibility="hidden";
@@ -305,6 +306,7 @@ const initgame = () =>{
             foodorder1++;
             foodorder2++;
             foodelement.style.color="red";
+            Audio.play();
             /* console.log(i); */
             if(foodorder==3)
             {
@@ -313,7 +315,8 @@ const initgame = () =>{
                     /* console.log("sai"); */
                     score++;
                     colors.innerHTML="ALT";
-                    localStorage.setItem("score-1",score1)
+                    localStorage.setItem("score-1",score1);
+                    Audio.play();
                     
                 }
             }
@@ -327,6 +330,7 @@ const initgame = () =>{
                 food1[i].a=Math.floor(Math.random()*40);
                 food1[i].b=Math.floor(Math.random()*40);
             }
+            Audio.play();
             updatefoodposition();
             snakebody.push(food1[i].a,food1[i].b);
             foodorder1++;
@@ -339,6 +343,7 @@ const initgame = () =>{
                     /* console.log("sai"); */
                     score++;
                     colors.innerHTML="RED";
+                    Audio.play();
                     
                 }
                 i=0;
@@ -354,6 +359,7 @@ const initgame = () =>{
                 food[i].a=Math.floor(Math.random()*40);
                 food[i].b=Math.floor(Math.random()*40);
             }
+            Audio.play();
             updatefoodposition();
             /* console.log("vishal"); */
             snakebody.push(food[i].a,food[i].b);
@@ -367,7 +373,7 @@ const initgame = () =>{
                    /*  console.log("sai"); */
                     score++;
                     colors.innerHTML="ALT";
-                    
+                    Audio.play();
                 }
                 i=0;
             }
