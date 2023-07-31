@@ -72,6 +72,15 @@ let food2=[
 let obstacle2=[
     {a:20,b:5}
 ];
+let obstacle4=[
+    {a:20,b:10}
+];
+let obstacle5=[
+    {a:10,b:5}
+];
+let obstacle6=[
+    {a:15,b:15}
+];
 let power=[
     {a:35,b:35}
 ]
@@ -121,6 +130,9 @@ function draw(){
     drawfood1(gameboard);
     drawobstacle(gameboard);
     drawobstacle1(gameboard);
+    drawobstacle4(gameboard);
+    drawobstacle5(gameboard);
+    drawobstacle6(gameboard);
     drawpower(gameboard);
 }
 function checkDeath(){
@@ -203,6 +215,42 @@ obstacle3.style.gridRowStart= obstacle2[0].a;
 obstacle3.style.gridColumnStart=obstacle2[0].b; 
 obstacle3.classList.add("obstacle");
 gameboard.appendChild(obstacle3);
+function drawobstacle4(gameboard){
+    const obstacle10=document.createElement("div");
+    obstacle10.style.gridRowStart= obstacle4[0].a;
+    obstacle10.style.gridColumnStart=obstacle4[0].b; 
+    obstacle10.classList.add("obstacle");
+    gameboard.appendChild(obstacle10);
+ } 
+const obstacle10=document.createElement("div");
+obstacle10.style.gridRowStart= obstacle4[0].a;
+obstacle10.style.gridColumnStart=obstacle4[0].b; 
+obstacle10.classList.add("obstacle");
+gameboard.appendChild(obstacle10);
+function drawobstacle5(gameboard){
+    const obstacle11=document.createElement("div");
+    obstacle11.style.gridRowStart= obstacle5[0].a;
+    obstacle11.style.gridColumnStart=obstacle5[0].b; 
+    obstacle11.classList.add("obstacle");
+    gameboard.appendChild(obstacle11);
+ } 
+const obstacle11=document.createElement("div");
+obstacle11.style.gridRowStart= obstacle5[0].a;
+obstacle11.style.gridColumnStart=obstacle5[0].b; 
+obstacle11.classList.add("obstacle");
+gameboard.appendChild(obstacle11);
+function drawobstacle6(gameboard){
+    const obstacle12=document.createElement("div");
+    obstacle12.style.gridRowStart= obstacle6[0].a;
+    obstacle12.style.gridColumnStart=obstacle6[0].b; 
+    obstacle12.classList.add("obstacle");
+    gameboard.appendChild(obstacle12);
+ } 
+const obstacle12=document.createElement("div");
+obstacle12.style.gridRowStart= obstacle6[0].a;
+obstacle12.style.gridColumnStart=obstacle6[0].b; 
+obstacle12.classList.add("obstacle");
+gameboard.appendChild(obstacle12);
 
 function drawfood1(gameboard){
     const foodelement3=document.createElement("div");
@@ -292,6 +340,14 @@ const initgame = () =>{
            }
         }
      }
+     for(let i=0;i<snakebody.length;i++)
+     {
+        if(snakebody[i].x==obstacle4[0].b && snakebody[i].y==obstacle4[0].a || snakebody[i].x==obstacle5[0].b && snakebody[i].y==obstacle5[0].a || snakebody[i].x==obstacle6[0].b && snakebody[i].y==obstacle6[0].a)
+        {
+            alert("gameover");
+            location.reload();
+        }
+     }
     for(let i=0;i<colorarr.length;i++)
     {
         if(snakebody[0].x === food[i].b && snakebody[0].y===food[i].a)
@@ -307,6 +363,7 @@ const initgame = () =>{
             foodorder2++;
             foodelement.style.color="red";
             Audio.play();
+            snakespeed++;
             /* console.log(i); */
             if(foodorder==3)
             {
@@ -317,6 +374,7 @@ const initgame = () =>{
                     colors.innerHTML="ALT";
                     localStorage.setItem("score-1",score1);
                     Audio.play();
+                    snakespeed++;
                     
                 }
             }
@@ -335,6 +393,7 @@ const initgame = () =>{
             snakebody.push(food1[i].a,food1[i].b);
             foodorder1++;
             foodorder2++;
+            snakespeed++;
             /* console.log(i); */
             if(foodorder1==6)
             {
@@ -344,7 +403,7 @@ const initgame = () =>{
                     score++;
                     colors.innerHTML="RED";
                     Audio.play();
-                    
+                    snakespeed++;
                 }
                 i=0;
             }
@@ -364,6 +423,7 @@ const initgame = () =>{
             /* console.log("vishal"); */
             snakebody.push(food[i].a,food[i].b);
             foodorder2++;
+            snakespeed++;
             /* console.log(i);
             console.log(foodorder2); */
             if(foodorder2==9)
@@ -374,6 +434,7 @@ const initgame = () =>{
                     score++;
                     colors.innerHTML="ALT";
                     Audio.play();
+                    snakespeed++;
                 }
                 i=0;
             }
